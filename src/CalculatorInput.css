@@ -1,0 +1,90 @@
+.CalculatorInput {
+    /* include a grid of 4 columns and 5 rows */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    /*
+    change the position and size of the buttons to achieve the desired display
+    \ac\ac\/\*\
+    \7 \8 \9\-\
+    \4 \5 \6\+\
+    \1 \2 \3\=\
+    \0 \0 \.\=\
+    - ac spans two columns
+    - = spans two rows
+    - 0 spans two columns
+    */
+    grid-template-areas: "clear clear divide multiply" "seven eight nine subtract" "four five six add" "one two three equals" "zero zero decimal equals";
+  }
+  .CalculatorInput button {
+    /* inherit color and font-family and remove the default background/border properties */
+    color: inherit;
+    font-family: inherit;
+    background: none;
+    border: none;
+    /* text uppercase for the clear button */
+    text-transform: uppercase;
+    font-size: 1.1rem;
+  }
+  
+  .CalculatorInput button#zero {
+    grid-area: zero;
+  }
+  .CalculatorInput button#one {
+    grid-area: one;
+  }
+  .CalculatorInput button#two {
+    grid-area: two;
+  }
+  .CalculatorInput button#three {
+    grid-area: three;
+  }
+  .CalculatorInput button#four {
+    grid-area: four;
+  }
+  .CalculatorInput button#five {
+    grid-area: five;
+  }
+  .CalculatorInput button#six {
+    grid-area: six;
+  }
+  .CalculatorInput button#seven {
+    grid-area: seven;
+  }
+  .CalculatorInput button#eight {
+    grid-area: eight;
+  }
+  .CalculatorInput button#nine {
+    grid-area: nine;
+  }
+  .CalculatorInput button#add {
+    grid-area: add;
+  }
+  .CalculatorInput button#subtract {
+    grid-area: subtract;
+  }
+  .CalculatorInput button#multiply {
+    grid-area: multiply;
+  }
+  .CalculatorInput button#divide {
+    grid-area: divide;
+  }
+  .CalculatorInput button#decimal {
+    grid-area: decimal;
+  }
+  .CalculatorInput button#equals {
+    grid-area: equals;
+  }
+  .CalculatorInput button#clear {
+    grid-area: clear;
+  }
+  
+  /* on hover/focus slightly darken the #fff background */
+  .CalculatorInput button:hover,
+  .CalculatorInput button:focus {
+    background: var(--clr-text-bg);
+  }
+  /* when clicked, change the background to its initial state */
+  .CalculatorInput button:active {
+    background: initial;
+  }
